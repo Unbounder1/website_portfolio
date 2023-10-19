@@ -1,0 +1,73 @@
+
+@font-face {
+    font-family: Evafiya;
+    src: url(/fonts/Evafiya.ttf);
+}
+@font-face {
+    font-family: Trento;
+    src: url(/fonts/Trento.ttf);
+}
+body {
+    font-family: Evafiya;
+    margin: -5vh;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    /* background-color: #ffffff; */
+    background-image: url('images/adjusted_1_of_1.jpg');
+    transform: translateY()
+}
+#overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-size: cover;
+
+}
+.outline {
+    background-image: url('images/outline.png');
+    background-size: contain;
+    /* z-index: 1; */
+}
+.name{
+
+    position: relative;
+    font-family: Evafiya;
+    font-weight: bold;
+    font-size: 10vw;
+    text-align: center;
+    background-image: "";
+    background-size: 60% 100%;
+    background-position: center -2.7vw;
+    background-repeat: no-repeat;
+    transform: scaleY(0.7);
+    margin-bottom: -3vw;
+    z-index: 10;
+    
+}
+.submain{
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    width: 90vw; 
+    height:5vw;
+    font-family: Trento;
+    font-size: 0.3vw;
+    font-stretch: expanded;
+    
+}
+.submain div {
+    background-size: contain;
+    background-position: center center;
+    z-index: 3;
+}
+.hoverComponentStyle {
+    font-size: 40em;
+}
