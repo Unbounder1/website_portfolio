@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-<<<<<<< Updated upstream
-
-function  HoverComponents(){
-    const [hovered, setHovered] = React.useState(false);
-=======
 import PngPlayer from './png_player';
 
 function HoverComponents(props) {
@@ -13,23 +8,12 @@ function HoverComponents(props) {
         backgroundColor: hovered ? 'white' : '',
         fontSize: '10vw'
     }
->>>>>>> Stashed changes
 
     const handleMouseEnter = () => {
         setHovered(true);
     }
     const handleMouseLeave = () => {
         setHovered(false);
-<<<<<<< Updated upstream
-    }
-
-    return (
-        <div
-        className={hovered ? 'hovered-bg': ''}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        ></div>
-=======
 
     };
 
@@ -49,7 +33,6 @@ function HoverComponents(props) {
             />
             {props.message}
         </div>
->>>>>>> Stashed changes
     );
 }
 
