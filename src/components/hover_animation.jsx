@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState, useRef } from 'react';
 
-function HoverComponents({startFrame, frameRate, endFrame, directory, message}) {
+function HoverComponents({ startFrame, frameRate, endFrame, directory, message }) {
     startFrame = parseInt(startFrame, 10);
     endFrame = parseInt(endFrame, 10);
     frameRate = parseInt(frameRate, 10);
@@ -10,26 +10,26 @@ function HoverComponents({startFrame, frameRate, endFrame, directory, message}) 
 
     const imageUrl = `${directory}${currentFrame.toString().padStart(2, '0')}-min.png`;
     const styles = {
-        backgroundColor: hovered ? 'white': '',
+        backgroundColor: hovered ? 'white' : '',
         fontSize: '10vw',
         zIndex: '100',
         position: 'relative'
     }
 
     const frameDuration = 1000 / frameRate;
-    let timer;
+    const timer = useRef(null);
 
     const handleMouseEnter = () => {
         setHovered(true);
-        clearInterval(timer); 
-        timer = setInterval(() => {
+        clearInterval(timer.current);
+        timer.current = setInterval(() => {
             setCurrentFrame(prevFrame => {
                 const nextFrame = prevFrame + 1;
                 console.log(prevFrame)
                 if (nextFrame < endFrame) {
                     return nextFrame;
                 }
-                clearInterval(timer);
+                clearInterval(timer.current);
                 return prevFrame;
             });
         }, frameDuration);
@@ -37,13 +37,13 @@ function HoverComponents({startFrame, frameRate, endFrame, directory, message}) 
 
     const handleMouseLeave = () => {
         setHovered(false);
-        clearInterval(timer); 
-        timer = setInterval(() => {
+        clearInterval(timer.current);
+        timer.current = setInterval(() => {
             setCurrentFrame(prevFrame => {
                 console.log(prevFrame)
                 const prev = prevFrame - 1;
-                if (prev < 0) { 
-                    clearInterval(timer);
+                if (prev < 0) {
+                    clearInterval(timer.current);
                     return 0;
                 }
                 return prev;
@@ -53,7 +53,7 @@ function HoverComponents({startFrame, frameRate, endFrame, directory, message}) 
 
     return (
         <div>
-            <HoverOverlay url={imageUrl}/>
+            <HoverOverlay url={imageUrl} />
             <span
                 style={styles}
                 onMouseEnter={handleMouseEnter}
@@ -65,7 +65,7 @@ function HoverComponents({startFrame, frameRate, endFrame, directory, message}) 
     );
 }
 
-function HoverOverlay ({url}) {
+function HoverOverlay({ url }) {
     const styles = {
         backgroundImage: `url('${url}')`,
         top: '0',
