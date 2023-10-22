@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PngPlayer from './png_player';
 
 function HoverComponents({startFrame, frameRate, endFrame, directory, message}) {
     startFrame = parseInt(startFrame, 10);
@@ -11,8 +10,10 @@ function HoverComponents({startFrame, frameRate, endFrame, directory, message}) 
 
     const imageUrl = `${directory}${currentFrame.toString().padStart(2, '0')}-min.png`;
     const styles = {
-        backgroundImage: `url('${imageUrl}')`,
-        fontSize: '10vw'
+        backgroundColor: hovered ? 'white': '',
+        fontSize: '10vw',
+        zIndex: '100',
+        position: 'relative'
     }
 
     const frameDuration = 1000 / frameRate;
@@ -51,14 +52,30 @@ function HoverComponents({startFrame, frameRate, endFrame, directory, message}) 
     };
 
     return (
-        <div
-            style={styles}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
-            {message}
+        <div>
+            <HoverOverlay url={imageUrl}/>
+            <span
+                style={styles}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                {message}
+            </span>
         </div>
     );
 }
 
+function HoverOverlay ({url}) {
+    const styles = {
+        backgroundImage: `url('${url}')`,
+        top: '0',
+        left: '0',
+        width: '100vw',
+        height: '100vh',
+        position: 'absolute',
+        zIndex: '1'
+    }
+
+    return <div style={styles}></div>;
+}
 export default HoverComponents;
