@@ -35,9 +35,9 @@ body {
     background-image: url('images/outline.png');
     background-size: contain;
 }
-/* .name{
+.title {
 
-    position: relative;
+    position: center -2.7vw;
     font-family: Evafiya;
     font-weight: bold;
     font-size: 10vw;
@@ -51,22 +51,22 @@ body {
     z-index: 10;
     
 }
-.submain{
+.sections {
     justify-content: space-evenly;
     align-items: center;
     display: flex;
-    width: 90vw; 
+    width: 80vw; 
     height:5vw;
     font-family: Trento;
     font-size: 0.3vw;
-    font-stretch: expanded;
+    z-index: 100;
     
 }
-.submain div {
+/* .submain div {
     background-size: contain;
     background-position: center center;
     z-index: 3;
 }
 .name {
     background-color: black;
-} */
+}  */

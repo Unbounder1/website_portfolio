@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
+import '../styles/index_style.css';
 
-function HoverComponents({ startFrame, frameRate, endFrame, directory, message }) {
+function HoverComponents({ startFrame, frameRate, endFrame, directory, message}) {
     startFrame = parseInt(startFrame, 10);
     endFrame = parseInt(endFrame, 10);
     frameRate = parseInt(frameRate, 10);
@@ -8,11 +9,10 @@ function HoverComponents({ startFrame, frameRate, endFrame, directory, message }
     const [hovered, setHovered] = useState(false);
     const [currentFrame, setCurrentFrame] = useState(startFrame);
 
-    const imageUrl = `${directory}${currentFrame.toString().padStart(2, '0')}-min.png`;
+    const imageUrl = `${directory}${currentFrame.toString().padStart(2, '0')}.png`;
     const styles = {
         backgroundColor: hovered ? 'white' : '',
-        fontSize: '10vw',
-        zIndex: '100',
+        zIndex: hovered ? '4' : '2',
         position: 'relative'
     }
 
@@ -53,7 +53,7 @@ function HoverComponents({ startFrame, frameRate, endFrame, directory, message }
 
     return (
         <div>
-            <HoverOverlay url={imageUrl} />
+            
             <span
                 style={styles}
                 onMouseEnter={handleMouseEnter}
@@ -61,11 +61,12 @@ function HoverComponents({ startFrame, frameRate, endFrame, directory, message }
             >
                 {message}
             </span>
+            <HoverOverlay url={imageUrl} hovered={hovered}/>
         </div>
     );
 }
 
-function HoverOverlay({ url }) {
+function HoverOverlay({ url, hovered }) {
     const styles = {
         backgroundImage: `url('${url}')`,
         top: '0',
@@ -73,7 +74,8 @@ function HoverOverlay({ url }) {
         width: '100vw',
         height: '100vh',
         position: 'absolute',
-        zIndex: '1'
+        zIndex: hovered ? '3' : '1',
+        pointerEvents: 'none'
     }
 
     return <div style={styles}></div>;
