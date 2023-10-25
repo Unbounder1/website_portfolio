@@ -12,13 +12,12 @@ import HoverComponents from '../components/hover_animation.jsx';
 
 </head>
 <body>
-    <div class="title">
-        Ryan Dong
-    </div>
     <div class="sections">
-	    <HoverComponents message="About Me" startFrame=0 frameRate=60 endFrame=80 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/aboutme/anim" client:load />
-        <HoverComponents message="Technical" startFrame=0 frameRate=60 endFrame=47 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/technical/anim" client:load />
-        <HoverComponents message="Creative" startFrame=0 frameRate=60 endFrame=44 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/test/hover1" client:load />
-    </div>
+        <ul>
+            <li><HoverComponents message="About Me" startFrame=0 frameRate=60 endFrame=80 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/aboutme/anim" client:load /></li>
+            <li><HoverComponents message="Technical" startFrame=0 frameRate=60 endFrame=47 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/technical/anim" client:load /></li>
+            <li><HoverComponents message="Creative" startFrame=0 frameRate=60 endFrame=44 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/test/hover1" client:load /></li>    
+        </ul>
+	        </div>
 </body>
 </html>
