@@ -5,7 +5,8 @@ nav {
     padding: 1rem 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: left;
+    margin: 10px;
 }
 nav ul {
     list-style: none;

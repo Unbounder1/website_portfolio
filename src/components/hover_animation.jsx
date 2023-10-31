@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import '../styles/index_style.css';
+import '../styles/temp_index.css';
 
 function HoverOverlay({ url, hovered }) {
     const styles = {
@@ -8,9 +8,10 @@ function HoverOverlay({ url, hovered }) {
         left: '0',
         width: '100vw',
         height: '100vh',
-        position: 'absolute',
+        position: 'fixed',
         zIndex: hovered ? '3' : '1',
         pointerEvents: 'none'
+
     }
 
     return <div style={styles}></div>;
@@ -26,9 +27,11 @@ function HoverComponents({ startFrame, frameRate, endFrame, directory, message})
 
     const imageUrl = `${directory}${currentFrame.toString().padStart(2, '0')}.png`;
     const styles = {
-        backgroundColor: hovered ? 'white' : '',
+        backgroundColor: hovered ? 'black' : '',
         zIndex: hovered ? '4' : '2',
-        position: 'relative'
+        position: 'fixed',
+        // translate
+        transform: 'scaleY(0.8) translateX(-13vw) translateY(-1vw)'
     }
 
     const frameDuration = 1000 / frameRate;

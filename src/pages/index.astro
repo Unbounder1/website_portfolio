@@ -1,7 +1,9 @@
 ---
-import '../styles/index_style.css';
+import '../styles/temp_index.css';
 import HoverComponents from '../components/hover_animation.jsx';
 ---
+
+<!-- UNFINISHED -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,11 +15,23 @@ import HoverComponents from '../components/hover_animation.jsx';
 </head>
 <body>
     <div class="sections">
+        
         <ul>
-            <li><HoverComponents message="About Me" startFrame=0 frameRate=60 endFrame=80 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/aboutme/anim" client:load /></li>
-            <li><HoverComponents message="Technical" startFrame=0 frameRate=60 endFrame=47 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/technical/anim" client:load /></li>
-            <li><HoverComponents message="Creative" startFrame=0 frameRate=60 endFrame=44 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/test/hover1" client:load /></li>    
+            <li>
+                <a class="items" href="/technical">
+                    <HoverComponents 
+                    message="Technical" 
+                    startFrame={0} 
+                    frameRate={60} 
+                    endFrame={47} 
+                    directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/technical/anim" 
+                    client:load 
+                    />
+                </a>
+            </li>
+            <li><a class="items" href="/about-me"> <HoverComponents message="About Me" startFrame=0 frameRate=60 endFrame=80 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/aboutme/anim" client:load /></a></li>
+            <li><a class="items" href="/creative"><HoverComponents message="Creative" startFrame=0 frameRate=60 endFrame=44 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/test/hover1" client:load /></a></li>    
         </ul>
-	        </div>
+        </div>
 </body>
 </html>

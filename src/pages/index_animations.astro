@@ -1,0 +1,32 @@
+---
+import '../styles/index_style_animation.css';
+import HoverComponents from '../components/hover_animation.jsx';
+---
+
+<!-- UNFINISHED -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Dong's Portfolio</title>
+
+</head>
+<body>
+    <div class="sections">
+        <ul>
+            <li><HoverComponents message="About Me" startFrame=0 frameRate=60 endFrame=80 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/aboutme/anim" client:load /></li>
+            <li><HoverComponents message="Technical" startFrame=0 frameRate=60 endFrame=47 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/technical/anim" client:load /></li>
+            <li><HoverComponents message="Creative" startFrame=0 frameRate=60 endFrame=44 directory="https://ryan-dong-portfolio-bucket.s3.us-east-2.amazonaws.com/images/test/hover1" client:load /></li>    
+        </ul>
+        <div class="leftsquaremask">
+            <div class="leftsquare1">
+        </div>
+            
+        </div>
+        <div class="rightsquare1"></div>
+        <div class="rightsquare2"></div>
+	        </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.outer {
+    border-radius: 5%;
+    background-color: white;
+    width: 25vw;
+    height: 25vw;
+    border: 1px solid rgb(34, 34, 34);
+    margin: 5vw;
+}
