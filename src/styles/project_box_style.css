@@ -1,8 +1,36 @@
 .outer {
     border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     background-color: white;
     width: 25vw;
     height: 25vw;
     border: 1px solid rgb(34, 34, 34);
     margin: 5vw;
+    position: relative;
+}
+.title {
+    display:flex;
+    font-size: 5vw;
+    padding: 1vw 3vw 0vw 3vw;
+}
+.description {
+    display: flex;
+    padding: 1vw 10vw 4vw 2vw;
+}
+.tagbox {
+    box-sizing: border-box;
+    width: 19vw;
+    height: 7vw;
+    background-color: black; 
+    display: flex;
+}
+.picture {
+    background-color: red;
+    border-radius: 5%;
+    width: 25vw;
+    height: 25vw;
+    position: absolute;
+    transform: translateX(70%);
 }

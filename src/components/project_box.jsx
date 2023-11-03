@@ -5,10 +5,14 @@ function ProjectContainer ({title, description, tags}) {
 
 
     return (
-        <div class="outer">
-            <div class="title">{title}</div>
-            <div class="description">{description}</div>
+        <div className="outer">
+            <div className="title">{title}</div>
+            <div className="description">{description}</div>
+            <div className="tagbox"></div>
+            <div className="picture"></div>
         </div>
+
+        
     )
 
 
