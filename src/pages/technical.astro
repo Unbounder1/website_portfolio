@@ -1,8 +1,20 @@
 ---
 import Navbar from '../components/navbar'
 import ProjectContainer from '../components/project_box'
----
+import ProjectList from '../components/project_list'
+import '../styles/technical_style.css'
+import { useState } from 'react';
 
+const projects = [
+  {
+    title: "Custom Server",
+    description: "this is a test description for the test project in the technical category",
+    tags: ["RHCSA", "abc"],
+  },
+];
+
+const serializedProjects = JSON.stringify(projects);
+---
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,14 +22,9 @@ import ProjectContainer from '../components/project_box'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan Dong's Portfolio</title>
-
 </head>
 <body>
     <Navbar />
-    <ProjectContainer 
-    title="test" 
-    description="this is a test description for the test project in the technical category"
-    tags="RHCSA"
-    />
+    <ProjectList client:load client:visible client:idle projects={projects} />
 </body>
 </html>
