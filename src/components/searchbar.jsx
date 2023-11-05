@@ -25,7 +25,6 @@ const SearchBar = ({ onSearch }) => {
         placeholder="Type to Search..."
         value={searchTerm}
         onChange={handleChange}
-        onKeyPress={handleKeyPress}
       />
     </div>
   );

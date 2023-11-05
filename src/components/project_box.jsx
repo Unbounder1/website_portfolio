@@ -8,8 +8,9 @@ function ProjectContainer ({title, description, tags}) {
         </div>
     )) : null;
 
+
     return (
-        <div className="outer">
+        <div className="outer" >
             <div className="title">{title}</div>
             <div className="description">{description}</div>
             <div className="tagbox">{tagElements}</div>
