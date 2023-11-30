@@ -16,9 +16,6 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <div className="search-box">
-      <button className="btn-search" onClick={() => onSearch(searchTerm)}>
-        <i className="fas fa-search"></i>
-      </button>
       <input
         type="text"
         className="input-search"
