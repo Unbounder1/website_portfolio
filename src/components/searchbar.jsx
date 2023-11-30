@@ -6,6 +6,7 @@ const SearchBar = ({ onSearch }) => {
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
+    onSearch(e.target.value);
   };
 
   const handleKeyPress = (e) => {
